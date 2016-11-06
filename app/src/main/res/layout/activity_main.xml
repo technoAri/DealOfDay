@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.hppc.dealofday.MainActivity">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Base.AlertDialog.AppCompat.Light"
+        android:text="Welcome! Find the best deals of the e-commerce giants and garb the opportunities..." />
+    <TextView
+        android:layout_below="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Happy Shopping"
+        style="@style/Base.AlertDialog.AppCompat.Light"
+        android:textStyle="italic"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:id="@+id/textView" />
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feeling Interested?"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="30dp"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NEXT"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/linearLayout" />
+</RelativeLayout>

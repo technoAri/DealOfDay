@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.hppc.dealofday.HomeScreenActivity">
+
+    <TextView
+        android:id="@+id/tvDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="date"
+        android:layout_alignParentEnd="true"
+        style="@style/Base.AlertDialog.AppCompat.Light"
+        android:textStyle="italic"
+        android:textSize="18dp"/>
+
+    <LinearLayout
+        android:id="@+id/llSearch"
+        android:layout_below="@+id/tvDateTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search By \nCategory" />
+
+        <SearchView
+            android:id="@+id/search_bar_prod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="search for products">
+        </SearchView>
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_below="@+id/llSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:id="@+id/llEcommerceSite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llSearch"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageButton
+                android:id="@+id/amazonLogo"
+                android:layout_margin="2dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/amazonelogo" />
+
+            <ImageButton
+                android:id="@+id/flipkartLogo"
+                android:layout_margin="2dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/flipkartlogo" />
+
+            <ImageButton
+                android:id="@+id/ebayLogo"
+                android:layout_margin="2dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ebaylogo" />
+
+            <ImageButton
+                android:id="@+id/paytmLogo"
+                android:layout_margin="2dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/paytmlogo" />
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+</RelativeLayout>
