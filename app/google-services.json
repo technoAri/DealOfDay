@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "880191100401",
+    "firebase_url": "https://dealofday-26c4f.firebaseio.com",
+    "project_id": "dealofday-26c4f",
+    "storage_bucket": "dealofday-26c4f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880191100401:android:a2939f2f1c3a32b6",
+        "android_client_info": {
+          "package_name": "com.example.hppc.dealofday"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880191100401-6a4po9ipankgmi4451nbdutdsv22qic0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0dG4fXJ_wdM0lidR1mZvwWS5iGV7QM28"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

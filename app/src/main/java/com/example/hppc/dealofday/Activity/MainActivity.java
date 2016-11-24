@@ -1,10 +1,12 @@
-package com.example.hppc.dealofday;
+package com.example.hppc.dealofday.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.hppc.dealofday.R;
 
 public class MainActivity extends AppCompatActivity {
 

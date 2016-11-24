@@ -8,7 +8,7 @@
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.hppc.dealofday.HomeScreenActivity">
+    tools:context=".Activity.HomeScreenActivity">
 
     <TextView
         android:id="@+id/tvDateTime"
@@ -33,19 +33,28 @@
             android:layout_height="wrap_content"
             android:text="Search By \nCategory" />
 
-        <SearchView
-            android:id="@+id/search_bar_prod"
+        <!--<SearchView-->
+            <!--android:id="@+id/search_bar_prod"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:queryHint="search for products">-->
+        <!--</SearchView>-->
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:queryHint="search for products">
-        </SearchView>
+            android:ems="10"
+            android:inputType="textAutoComplete|textAutoCorrect"
+            android:hint="Search for Products">
+            <requestFocus />
+        </AutoCompleteTextView>
     </LinearLayout>
 
     <HorizontalScrollView
         android:layout_below="@+id/llSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="100dp">
 
         <LinearLayout
             android:id="@+id/llEcommerceSite"
@@ -58,30 +67,30 @@
             <ImageButton
                 android:id="@+id/amazonLogo"
                 android:layout_margin="2dp"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/amazonelogo" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/amazone" />
 
             <ImageButton
                 android:id="@+id/flipkartLogo"
                 android:layout_margin="2dp"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/flipkartlogo" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/flipkart" />
 
             <ImageButton
                 android:id="@+id/ebayLogo"
                 android:layout_margin="2dp"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ebaylogo" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ebay" />
 
             <ImageButton
                 android:id="@+id/paytmLogo"
                 android:layout_margin="2dp"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/paytmlogo" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/paytm" />
 
         </LinearLayout>
 

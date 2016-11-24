@@ -1,4 +1,4 @@
-package com.example.hppc.dealofday;
+package com.example.hppc.dealofday.Activity;
 
 import android.annotation.SuppressLint;
 import android.support.v7.app.ActionBar;
@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
+
+import com.example.hppc.dealofday.R;
 
 public class WebViewActivity extends AppCompatActivity {
 
