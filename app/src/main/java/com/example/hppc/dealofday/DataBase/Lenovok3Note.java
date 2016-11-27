@@ -3,13 +3,12 @@ package com.example.hppc.dealofday.DataBase;
 /**
  * Created by HP PC on 11/24/2016.
  */
-public class Amazon {
-
+public class Lenovok3Note {
     //name and address string
     private String prodName;
     private String price;
 
-    public Amazon() {
+    public Lenovok3Note() {
       /*Blank default constructor essential for Firebase*/
     }
     //Getters and setters
@@ -28,5 +27,4 @@ public class Amazon {
     public void setPrice(String price) {
         this.price = price;
     }
-
 }

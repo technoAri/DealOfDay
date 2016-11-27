@@ -5,8 +5,8 @@
 //import android.database.sqlite.SQLiteOpenHelper;
 //import android.util.Log;
 //
-//import com.example.hppc.dealofday.DataBase.Amazon;
-//import com.example.hppc.dealofday.DataBase.Flipkart;
+//import com.example.hppc.dealofday.DataBase.CoolpadNote3;
+//import com.example.hppc.dealofday.DataBase.Lenovok3Note;
 //import com.example.hppc.dealofday.Repository.AmazonRepo;
 //import com.example.hppc.dealofday.Repository.FlipkartRepo;
 //
@@ -41,8 +41,8 @@
 //        Log.d(TAG, String.format("SQLiteDatabase.onUpgrade(%d -> %d)", oldVersion, newVersion));
 //
 //        // Drop table if existed, all data will be gone!!!
-//        db.execSQL("DROP TABLE IF EXISTS " + Amazon.TABLE);
-//        db.execSQL("DROP TABLE IF EXISTS " + Flipkart.TABLE);
+//        db.execSQL("DROP TABLE IF EXISTS " + CoolpadNote3.TABLE);
+//        db.execSQL("DROP TABLE IF EXISTS " + Lenovok3Note.TABLE);
 ////        db.execSQL("DROP TABLE IF EXISTS " + Major.TABLE);
 ////        db.execSQL("DROP TABLE IF EXISTS " + StudentCourse.TABLE);
 //        onCreate(db);

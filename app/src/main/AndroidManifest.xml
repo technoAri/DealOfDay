@@ -22,8 +22,8 @@
             android:name=".Activity.WebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_web_view"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".Activity.ProductAvailabilityActivity"></activity>
     </application>
 
 </manifest>

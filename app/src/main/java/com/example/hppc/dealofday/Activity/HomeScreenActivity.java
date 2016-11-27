@@ -1,22 +1,19 @@
 package com.example.hppc.dealofday.Activity;
 
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.graphics.Bitmap;
 import android.os.CountDownTimer;
-import android.provider.SyncStateContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Config;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.hppc.dealofday.DataBase.Amazon;
-import com.example.hppc.dealofday.DataBase.Flipkart;
+import com.example.hppc.dealofday.DataBase.CoolpadNote3;
 import com.example.hppc.dealofday.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,9 +22,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class HomeScreenActivity extends AppCompatActivity {
@@ -38,8 +36,9 @@ public class HomeScreenActivity extends AppCompatActivity {
     ImageButton amazon, flipkart, ebay, paytm;
     private DatabaseReference mDatabase;
     public static final String FIREBASE_URL = "https://dealofday-26c4f.firebaseio.com/";
+    Bundle bundle;
 
-    String[] products = {"Coolpad Note 3 Lite","Coolpad New","Moto E3","Moto X","Moto G3","Samsung Galaxy Note7", "Redmi 2 Prime"};
+    String[] products = {"Coolpad Note3","Sony Bravia KLV-32R302D 32 Inch","Moto E3","Coolpad Note Prime","Moto G3","Fastrack Analog Watch for Men", "LG Washing Machine", "Lenovo k3 Note", "Levi's Dark blue Jeans", "Nikon Coolpix S7000", "Samsung Galaxy S6", "iPhone 6S"};
 
     //@TargetApi(Build.VERSION_CODES.N)
     @Override
@@ -47,8 +46,6 @@ public class HomeScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
-        //FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-       // mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase = FirebaseDatabase.getInstance()
                 .getReferenceFromUrl("https://dealofday-26c4f.firebaseio.com/");
 
@@ -72,52 +69,92 @@ public class HomeScreenActivity extends AppCompatActivity {
         search.setAdapter(adapter);
         search.setThreshold(1);
 
+        search.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                bundle = new Bundle();
+                if(search.getText().toString().equals("Coolpad Note3")){
+                    bundle.putString("product", "coolpad");
+                }
+                else if(search.getText().toString().equals("LG Washing Machine")) {
+                    bundle.putString("product", "LG Washing Machine");
+                }
+                else if(search.getText().toString().equals("Lenovo k3 Note")) {
+                    bundle.putString("product", "Lenovo k3 Note");
+                }
+                else if(search.getText().toString().equals("Fastrack Analog Watch for Men")) {
+                    bundle.putString("product", "Fastrack Analog Watch for Men");
+                }
+                else if(search.getText().toString().equals("Coolpad Note Prime")) {
+                    bundle.putString("product", "Coolpad Note Prime");
+                }
+                else if(search.getText().toString().equals("Levi's Dark blue Jeans")) {
+                    bundle.putString("product", "Levi's Dark blue Jeans");
+                }
+                else if(search.getText().toString().equals("Moto G3")) {
+                    bundle.putString("product", "Moto G3");
+                }
+                else if(search.getText().toString().equals("MotoE3")) {
+                    bundle.putString("product", "MotoE3");
+                }
+                else if(search.getText().toString().equals("Nikon Coolpix S7000")) {
+                    bundle.putString("product", "Nikon Coolpix S7000");
+                }
+                else if(search.getText().toString().equals("Samsung Galaxy S6")) {
+                    bundle.putString("product", "Samsung Galaxy S6");
+                }
+                else if(search.getText().toString().equals("iPhone 6S")) {
+                    bundle.putString("product", "iPhone 6S");
+                }
+                else if(search.getText().toString().equals("Sony Bravia KLV-32R302D 32 Inch")) {
+                    bundle.putString("product", "Sony Bravia KLV-32R302D 32 Inch");
+                }
+                Intent i = new Intent(HomeScreenActivity.this, ProductAvailabilityActivity.class);
+                i.putExtras(bundle);
+                startActivity(i);
+            }
+        });
         categoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = "Moto E3";
-                String price = "5665";
-
-                //Creating Person object
-                final Amazon amazon = new Amazon();
-
-                //Adding values
-                amazon.setProdName(name);
-                amazon.setPrice(price);
-
-                //Storing values to firebase
-                mDatabase.child("Amazon").setValue(amazon);
-
-                String nameF = "Coolpad Note3";
-                String priceF = "7000";
-                final Flipkart flipkart = new Flipkart();
-
-                flipkart.setProdName(nameF);
-                flipkart.setPrice((priceF));
-                mDatabase.child("Flipkart").setValue(flipkart);
+//                String name = "Moto E3";
+//                String price = "5665";
+//
+//                //Creating Person object
+                //final CoolpadNote3 amazonPriceCoolpad = new CoolpadNote3();
+//
+//                //Adding values
+//                amazon.setProdName(name);
+//                amazon.setPrice(price);
+//
+//                //Storing values to firebase
+//                mDatabase.child("CoolpadNote3").setValue(amazon);
+//
+//                String nameF = "Coolpad Note3";
+//                String priceF = "7000";
+               // final CoolpadNote3 flipkart = new CoolpadNote3();
+//
+//                flipkart.setProdName(nameF);
+//                flipkart.setPrice((priceF));
+                //mDatabase.child("CoolpadNote3").setValue(flipkart);
                 //mDatabase.push();
 
-                mDatabase.addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Coolpad Note3").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                            //Getting the data from snapshot
-//                            Amazon amazon = postSnapshot.getValue(Amazon.class);
-//
-//                            Flipkart flipkart = postSnapshot.getValue(Flipkart.class);
+                            postSnapshot.child("Coolpad Note Prime").getValue();
 
-                            //Adding it to a string
-                            String string = amazon.getProdName();
-
+                            Map<String,Object> value = (Map<String, Object>) dataSnapshot.getValue();
+                            String name1 = String.valueOf(value.get("Amazon"));
                             //Displaying it on textview
-                            amazonProdName.setText(string);
-                            amazonPrice.setText("price: "+amazon.getPrice());
-                            flipkartProdNeme.setText(flipkart.getProdName());
-                            flipkartPrice.setText("price: "+flipkart.getPrice());
+                            //amazonProdName.setText();
+                            amazonPrice.setText("price: " + name1);
+//                            flipkartProdNeme.setText(flipkart.getProdName());
+//                            flipkartPrice.setText("price: " + flipkart.getPrice());
 
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
                         System.out.println("The read failed: " + databaseError.getMessage());
@@ -167,7 +204,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 //        amazonRepo.delete();
 //        flipkartRepo.delete();
 //
-//        Amazon amazon = new Amazon();
+//        CoolpadNote3 amazon = new CoolpadNote3();
 //
 //        amazon.setName("Moto E3");
 //        amazon.setAmazonId("a1");
@@ -189,7 +226,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 //        amazon.setAmazonId("a5");
 //        amazonRepo.insert(amazon);
 //
-//        Flipkart flipkart = new Flipkart();
+//        Lenovok3Note flipkart = new Lenovok3Note();
 //
 //        flipkart.setName("Moto E3");
 //        flipkart.setFlipkartId("b1");
