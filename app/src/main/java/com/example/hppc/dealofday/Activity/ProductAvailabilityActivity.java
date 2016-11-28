@@ -1,5 +1,6 @@
 package com.example.hppc.dealofday.Activity;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -59,6 +60,16 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
 
+                        if(!value.get("Amazon").equals("--")){
+                            amazonBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("Flipkart").equals("--")) {
+                            flipkartBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("PayTm") .equals("--")) {
+                            paytmBuy.setTextColor(Color.BLUE);
+                        }
+
                     }
 
                 }
@@ -82,6 +93,16 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         amazonPrice.setText(String.valueOf(value.get("Amazon")));
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
+
+                        if(!value.get("Amazon").equals("--")){
+                            amazonBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("Flipkart").equals("--")) {
+                            flipkartBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("PayTm") .equals("--")) {
+                            paytmBuy.setTextColor(Color.BLUE);
+                        }
 
                     }
 
@@ -107,6 +128,15 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
 
+                        if(!value.get("Amazon").equals("--")){
+                            amazonBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("Flipkart").equals("--")) {
+                            flipkartBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("PayTm") .equals("--")) {
+                            paytmBuy.setTextColor(Color.BLUE);
+                        }
                     }
 
                 }
@@ -130,6 +160,16 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         amazonPrice.setText(String.valueOf(value.get("Amazon")));
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
+
+                        if(!value.get("Amazon").equals("--")){
+                            amazonBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("Flipkart").equals("--")) {
+                            flipkartBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("PayTm") .equals("--")) {
+                            paytmBuy.setTextColor(Color.BLUE);
+                        }
 
                     }
 
@@ -155,6 +195,16 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
 
+                        if(!value.get("Amazon").equals("--")){
+                            amazonBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("Flipkart").equals("--")) {
+                            flipkartBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("PayTm") .equals("--")) {
+                            paytmBuy.setTextColor(Color.BLUE);
+                        }
+
                     }
 
                 }
@@ -179,6 +229,15 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
 
+                        if(!value.get("Amazon").equals("--")){
+                            amazonBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("Flipkart").equals("--")) {
+                            flipkartBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("PayTm") .equals("--")) {
+                            paytmBuy.setTextColor(Color.BLUE);
+                        }
                     }
 
                 }
@@ -203,6 +262,15 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
 
+                        if(!value.get("Amazon").equals("--")){
+                            amazonBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("Flipkart").equals("--")) {
+                            flipkartBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("PayTm") .equals("--")) {
+                            paytmBuy.setTextColor(Color.BLUE);
+                        }
                     }
 
                 }
@@ -228,6 +296,15 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
 
+                        if(!value.get("Amazon").equals("--")){
+                            amazonBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("Flipkart").equals("--")) {
+                            flipkartBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("PayTm") .equals("--")) {
+                            paytmBuy.setTextColor(Color.BLUE);
+                        }
                     }
 
                 }
@@ -252,6 +329,15 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
 
+                        if(!value.get("Amazon").equals("--")){
+                            amazonBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("Flipkart").equals("--")) {
+                            flipkartBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("PayTm") .equals("--")) {
+                            paytmBuy.setTextColor(Color.BLUE);
+                        }
                     }
 
                 }
@@ -276,6 +362,15 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
 
+                        if(!value.get("Amazon").equals("--")){
+                            amazonBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("Flipkart").equals("--")) {
+                            flipkartBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("PayTm") .equals("--")) {
+                            paytmBuy.setTextColor(Color.BLUE);
+                        }
                     }
 
                 }
@@ -300,6 +395,15 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
 
+                        if(!value.get("Amazon").equals("--")){
+                            amazonBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("Flipkart").equals("--")) {
+                            flipkartBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("PayTm") .equals("--")) {
+                            paytmBuy.setTextColor(Color.BLUE);
+                        }
                     }
 
                 }
@@ -323,6 +427,15 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
 
+                        if(value.get("Amazon")!= "--"){
+                            amazonBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("Flipkart").equals("--")) {
+                            flipkartBuy.setTextColor(Color.BLUE);
+                        }
+                        if(!value.get("PayTm") .equals("--")) {
+                            paytmBuy.setTextColor(Color.BLUE);
+                        }
                     }
 
                 }
