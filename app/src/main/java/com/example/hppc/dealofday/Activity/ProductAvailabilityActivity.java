@@ -1,8 +1,14 @@
 package com.example.hppc.dealofday.Activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.hppc.dealofday.R;
@@ -19,11 +25,16 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
     TextView prodName, prodDesc, amazonPrice, amazonBuy, flipkartPrice, flipkartBuy, paytmPrice, paytmBuy;
     private DatabaseReference mDatabase;
     String priceCoolpad, priceCoolpadF, priceCoolpadP;
+    Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_availability);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activities_new);
+        if (toolbar != null)
+            setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(null);
 
         prodName = (TextView)findViewById(R.id.tvProductName);
         prodDesc = (TextView)findViewById(R.id.tvProductDescription);
@@ -33,6 +44,14 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
         flipkartBuy = (TextView)findViewById(R.id.tvflipkartBuy);
         paytmPrice = (TextView)findViewById(R.id.tvpaytmPrice);
         paytmBuy = (TextView)findViewById(R.id.tvpaytmBuy);
+        backButton = (Button)findViewById(R.id.back_button);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         mDatabase = FirebaseDatabase.getInstance()
                 .getReferenceFromUrl("https://dealofday-26c4f.firebaseio.com/");
@@ -59,6 +78,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         amazonPrice.setText(priceCoolpad);
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
+                        prodDesc.setText("Smartphone Android 5.1 \n 5 inch display");
 
                         if(!value.get("Amazon").equals("--")){
                             amazonBuy.setTextColor(Color.BLUE);
@@ -69,7 +89,14 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         if(!value.get("PayTm") .equals("--")) {
                             paytmBuy.setTextColor(Color.BLUE);
                         }
-
+                        amazonBuy.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent i = new Intent(ProductAvailabilityActivity.this, WebViewActivity.class);
+                                i.putExtra("keyName", "coolpad");
+                                startActivity(i);
+                            }
+                        });
                     }
 
                 }
@@ -93,6 +120,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         amazonPrice.setText(String.valueOf(value.get("Amazon")));
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
+                        prodDesc.setText("Washing Machine \n Semi Automatic");
 
                         if(!value.get("Amazon").equals("--")){
                             amazonBuy.setTextColor(Color.BLUE);
@@ -127,6 +155,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         amazonPrice.setText(String.valueOf(value.get("Amazon")));
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
+                        prodDesc.setText("Smartphone Android 5.1 \n 5 inch display");
 
                         if(!value.get("Amazon").equals("--")){
                             amazonBuy.setTextColor(Color.BLUE);
@@ -160,6 +189,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         amazonPrice.setText(String.valueOf(value.get("Amazon")));
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
+                        prodDesc.setText("Analog Wrist watch \n (for men)");
 
                         if(!value.get("Amazon").equals("--")){
                             amazonBuy.setTextColor(Color.BLUE);
@@ -194,6 +224,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         amazonPrice.setText(String.valueOf(value.get("Amazon")));
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
+                        prodDesc.setText("Smartphone Android 6 \n 5.5 inch display");
 
                         if(!value.get("Amazon").equals("--")){
                             amazonBuy.setTextColor(Color.BLUE);
@@ -228,6 +259,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         amazonPrice.setText(String.valueOf(value.get("Amazon")));
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
+                        prodDesc.setText("Levi's Jeans wear \n Dark blue");
 
                         if(!value.get("Amazon").equals("--")){
                             amazonBuy.setTextColor(Color.BLUE);
@@ -261,6 +293,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         amazonPrice.setText(String.valueOf(value.get("Amazon")));
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
+                        prodDesc.setText("Smartphone Android 6.0 \n 5 inch display");
 
                         if(!value.get("Amazon").equals("--")){
                             amazonBuy.setTextColor(Color.BLUE);
@@ -328,6 +361,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         amazonPrice.setText(String.valueOf(value.get("Amazon")));
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
+                        prodDesc.setText("Digital Camera \n 12MP \n 10X zoom");
 
                         if(!value.get("Amazon").equals("--")){
                             amazonBuy.setTextColor(Color.BLUE);
@@ -361,6 +395,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         amazonPrice.setText(String.valueOf(value.get("Amazon")));
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
+                        prodDesc.setText("Smartphone Android 6.0 \n 5.5 inch display");
 
                         if(!value.get("Amazon").equals("--")){
                             amazonBuy.setTextColor(Color.BLUE);
@@ -394,6 +429,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         amazonPrice.setText(String.valueOf(value.get("Amazon")));
                         flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
                         paytmPrice.setText(String.valueOf(value.get("PayTm")));
+                        prodDesc.setText("Smartphone iOS 7 \n 5.5 inch display");
 
                         if(!value.get("Amazon").equals("--")){
                             amazonBuy.setTextColor(Color.BLUE);
@@ -445,5 +481,13 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                 System.out.println("The read failed: " + databaseError.getMessage());
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

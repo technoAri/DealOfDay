@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +42,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     Button categoryButton, menuButton;
     AutoCompleteTextView search;
     ImageButton amazon, flipkart, ebay, paytm;
+    ImageView imageViewProd1;
     private DatabaseReference mDatabase;
     public static final String FIREBASE_URL = "https://dealofday-26c4f.firebaseio.com/";
     Bundle bundle;
@@ -64,7 +66,6 @@ public class HomeScreenActivity extends AppCompatActivity {
         mNavigationDrawerItemTitles = getResources().getStringArray(R.array.navigation_drawer_items_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
-
         menuButton = (Button) findViewById(R.id.menu_button);
 
         mDatabase = FirebaseDatabase.getInstance()
@@ -77,7 +78,16 @@ public class HomeScreenActivity extends AppCompatActivity {
         flipkart = (ImageButton) findViewById(R.id.flipkartLogo);
         ebay = (ImageButton) findViewById(R.id.ebayLogo);
         paytm = (ImageButton) findViewById(R.id.paytmLogo);
+        imageViewProd1 = (ImageView) findViewById(R.id.coolpadImageTrend);
 
+        imageViewProd1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentTrnd = new Intent(HomeScreenActivity.this, WebViewActivity.class);
+                intentTrnd.putExtra("keyName", "coolpad");
+                startActivity(intentTrnd);
+            }
+        });
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

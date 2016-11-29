@@ -3,11 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Activity.MainActivity">
+    tools:context=".Activity.MainActivity"
+    android:background="#FE512C">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/trending4"
+        android:layout_above="@+id/tv1"
+        android:layout_centerInParent="true"/>
 
     <TextView
         android:id="@+id/tv1"
@@ -15,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/Base.AlertDialog.AppCompat.Light"
+        android:textColor="#FFFFFF"
         android:text="Welcome! Find the best deals of the e-commerce giants and garb the opportunities..." />
     <TextView
         android:layout_below="@+id/tv1"
@@ -25,7 +34,8 @@
         android:textStyle="italic"
         android:layout_centerHorizontal="true"
         android:textSize="20dp"
-        android:id="@+id/textView" />
+        android:id="@+id/textView"
+        android:textColor="#FFFFFF"/>
 
     <LinearLayout
         android:layout_alignParentBottom="true"
@@ -35,19 +45,25 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="80"
             android:layout_height="wrap_content"
             android:text="Feeling Interested?"
-            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
             android:paddingLeft="30dp"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="20dp"
+            android:textColor="#FFFFFF"/>
+        <TextView
+            android:id="@+id/tvNext"
+            android:layout_width="0dp"
+            android:layout_weight="20"
+            android:layout_height="wrap_content"
+            android:text="NEXT"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NEXT"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/linearLayout" />
+
 </RelativeLayout>
