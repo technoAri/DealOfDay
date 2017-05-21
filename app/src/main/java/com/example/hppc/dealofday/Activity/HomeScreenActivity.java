@@ -52,7 +52,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     public static DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
 
-    String[] products = {"Coolpad Note3", "Sony Bravia KLV-32R302D 32 Inch", "Moto E3", "Coolpad Note Prime", "Moto G3", "Fastrack Analog Watch for Men", "LG Washing Machine", "Lenovo k3 Note", "Levi's Dark blue Jeans", "Nikon Coolpix S7000", "Samsung Galaxy S6", "iPhone 6S"};
+    String[] products = {"Apple MacBook Air MMGF2HN", "Apple MacBook Pro MJLQ2HN", "Moto E3", "Coolpad Note Prime", "Moto G3", "Fastrack Analog Watch for Men", "LG Washing Machine", "Lenovo k3 Note", "Levi's Dark blue Jeans", "Nikon Coolpix S7000", "Samsung Galaxy S6", "iPhone 6S"};
 
     //@TargetApi(Build.VERSION_CODES.N)
     @Override
@@ -141,10 +141,10 @@ public class HomeScreenActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 bundle = new Bundle();
-                if (search.getText().toString().equals("Coolpad Note3")) {
-                    bundle.putString("product", "coolpad");
-                } else if (search.getText().toString().equals("LG Washing Machine")) {
-                    bundle.putString("product", "LG Washing Machine");
+                if (search.getText().toString().equals("Apple MacBook Air MMGF2HN")) {
+                    bundle.putString("product", "Apple MacBook Air MMGF2HN");
+                } else if (search.getText().toString().equals("Apple MacBook Pro MJLQ2HN")) {
+                    bundle.putString("product", "Apple MacBook Pro MJLQ2HN");
                 } else if (search.getText().toString().equals("Lenovo k3 Note")) {
                     bundle.putString("product", "Lenovo k3 Note");
                 } else if (search.getText().toString().equals("Fastrack Analog Watch for Men")) {
