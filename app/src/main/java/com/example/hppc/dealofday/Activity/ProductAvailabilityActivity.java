@@ -71,7 +71,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         prodName.setText(product);
                         //Get map of users in datasnapshot
                         for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                            String cost = (String) postSnapshot.child("amazon").child(product).child("cost").getValue();
+                            String cost = (String) postSnapshot.child("amazon").child(product).child("cost").getValue().toString();
                             System.out.println(cost);
                             amazonPrice.setText(postSnapshot.child("amazon").child(product).getValue().toString());
                             Map<String, Object> value = ((Map<String, Object>) dataSnapshot.getValue());
