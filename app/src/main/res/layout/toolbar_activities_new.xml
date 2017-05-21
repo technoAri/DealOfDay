@@ -8,14 +8,14 @@
         android:id="@+id/toolbar_activities_new"
         android:minHeight="?attr/actionBarSize"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:background="#FE512C">
 
-        <Button
+        <ImageView
             android:id="@+id/back_button"
-            android:layout_width="45dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_keyboard_backspace" />
+            android:background="@drawable/ic_keyboard_backspace_white_24dp" />
 
         <TextView
             android:id="@+id/tvNametoolbar1"

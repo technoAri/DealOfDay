@@ -57,7 +57,8 @@
                     android:id="@+id/btn_category"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Search By \nCategory" />
+                    android:text="Shop By \nCategory"
+                    android:textSize="12dp"/>
 
                 <!--<SearchView-->
                 <!--android:id="@+id/search_bar_prod"-->
@@ -231,6 +232,13 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:src="@drawable/paytm" />
+
+                <ImageButton
+                    android:id="@+id/snapdealLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:src="@drawable/snapdeal_logo" />
 
                 <!--<TextView-->
                 <!--android:layout_width="1dp"-->

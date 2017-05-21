@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hppc.dealofday.R;
@@ -25,7 +26,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
     TextView prodName, prodDesc, amazonPrice, amazonBuy, flipkartPrice, flipkartBuy, paytmPrice, paytmBuy;
     private DatabaseReference mDatabase;
     String priceCoolpad, priceCoolpadF, priceCoolpadP;
-    Button backButton;
+    ImageView backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
         flipkartBuy = (TextView)findViewById(R.id.tvflipkartBuy);
         paytmPrice = (TextView)findViewById(R.id.tvpaytmPrice);
         paytmBuy = (TextView)findViewById(R.id.tvpaytmBuy);
-        backButton = (Button)findViewById(R.id.back_button);
+        backButton = (ImageView) findViewById(R.id.back_button);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -39,9 +39,10 @@ import java.util.Map;
 public class HomeScreenActivity extends AppCompatActivity {
 
     TextView textViewDateTime, amazonProdName, flipkartProdNeme, amazonPrice, flipkartPrice;
-    Button categoryButton, menuButton;
+    ImageView menuButton;
+    Button categoryButton;
     AutoCompleteTextView search;
-    ImageButton amazon, flipkart, ebay, paytm;
+    ImageButton amazon, flipkart, ebay, paytm, snapdeal;
     ImageView imageViewProd1;
     private DatabaseReference mDatabase;
     public static final String FIREBASE_URL = "https://dealofday-26c4f.firebaseio.com/";
@@ -66,7 +67,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         mNavigationDrawerItemTitles = getResources().getStringArray(R.array.navigation_drawer_items_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
-        menuButton = (Button) findViewById(R.id.menu_button);
+        menuButton = (ImageView) findViewById(R.id.menu_button);
 
         mDatabase = FirebaseDatabase.getInstance()
                 .getReferenceFromUrl("https://dealofday-26c4f.firebaseio.com/");
@@ -78,6 +79,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         flipkart = (ImageButton) findViewById(R.id.flipkartLogo);
         ebay = (ImageButton) findViewById(R.id.ebayLogo);
         paytm = (ImageButton) findViewById(R.id.paytmLogo);
+        snapdeal = (ImageButton) findViewById(R.id.snapdealLogo);
         imageViewProd1 = (ImageView) findViewById(R.id.coolpadImageTrend);
 
         imageViewProd1.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +100,14 @@ public class HomeScreenActivity extends AppCompatActivity {
 
                 else
                     mDrawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
+
+        categoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreenActivity.this, CategoryActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -196,6 +206,30 @@ public class HomeScreenActivity extends AppCompatActivity {
                 startActivity(activityIntent);
             }
         });
+        snapdeal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent activityIntent = new Intent(HomeScreenActivity.this, WebViewActivity.class);
+                activityIntent.putExtra("keyName", "snapdeal");
+                startActivity(activityIntent);
+            }
+        });
+        paytm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent activityIntent = new Intent(HomeScreenActivity.this, WebViewActivity.class);
+                activityIntent.putExtra("keyName", "payTm");
+                startActivity(activityIntent);
+            }
+        });
+        ebay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent activityIntent = new Intent(HomeScreenActivity.this, WebViewActivity.class);
+                activityIntent.putExtra("keyName", "ebay");
+                startActivity(activityIntent);
+            }
+        });
     }
 
     private void selectItem(int position) {
@@ -218,57 +252,4 @@ public class HomeScreenActivity extends AppCompatActivity {
                 break;
         }
     }
-
-//    private void insertSampleData() {
-//        AmazonRepo amazonRepo = new AmazonRepo();
-//        FlipkartRepo flipkartRepo  = new FlipkartRepo();
-//
-//        amazonRepo.delete();
-//        flipkartRepo.delete();
-//
-//        CoolpadNote3 amazon = new CoolpadNote3();
-//
-//        amazon.setName("Moto E3");
-//        amazon.setAmazonId("a1");
-//        amazonRepo.insert(amazon);
-//
-//        amazon.setName("Moto g3");
-//        amazon.setAmazonId("a2");
-//        amazonRepo.insert(amazon);
-//
-//        amazon.setName("Moto X4");
-//        amazon.setAmazonId("a3");
-//        amazonRepo.insert(amazon);
-//
-//        amazon.setName("Coolpad Note 3 Lite");
-//        amazon.setAmazonId("a4");
-//        amazonRepo.insert(amazon);
-//
-//        amazon.setName("Coolpad New");
-//        amazon.setAmazonId("a5");
-//        amazonRepo.insert(amazon);
-//
-//        Lenovok3Note flipkart = new Lenovok3Note();
-//
-//        flipkart.setName("Moto E3");
-//        flipkart.setFlipkartId("b1");
-//        flipkartRepo.insert(flipkart);
-//
-//        flipkart.setName("Moto X Play");
-//        flipkart.setFlipkartId("b2");
-//        flipkartRepo.insert(flipkart);
-//
-//        flipkart.setName("Redmi Note Prime");
-//        flipkart.setFlipkartId("b3");
-//        flipkartRepo.insert(flipkart);
-//
-//        flipkart.setName("Samsung Galaxy s6");
-//        flipkart.setFlipkartId("b4");
-//        flipkartRepo.insert(flipkart);
-//
-//        flipkart.setName("Micromax Canvas spark");
-//        flipkart.setFlipkartId("b5");
-//        flipkartRepo.insert(flipkart);
-//
-//    }
 }
