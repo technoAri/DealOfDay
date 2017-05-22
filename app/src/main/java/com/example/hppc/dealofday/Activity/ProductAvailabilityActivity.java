@@ -62,21 +62,60 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
         bundle = getIntent().getExtras();
         product = bundle.getString("product");
 
-        final DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("amazon");
-        ref.addListenerForSingleValueEvent(
+        DatabaseReference amaziRref = FirebaseDatabase.getInstance().getReference().child("amazon");
+        DatabaseReference amazonRef1 = amaziRref.child(product).child("cost");
+        amazonRef1.addListenerForSingleValueEvent(
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
                         prodName.setText(product);
+                        String cost = dataSnapshot.getValue(String.class);
+                        amazonPrice.setText(cost);
+
                         //Get map of users in datasnapshot
-                        for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                            String cost = (String) postSnapshot.child("amazon").child(product).child("cost").getValue().toString();
-                            System.out.println(cost);
-                            amazonPrice.setText(postSnapshot.child("amazon").child(product).getValue().toString());
-                            Map<String, Object> value = ((Map<String, Object>) dataSnapshot.getValue());
-                            System.out.println(value);
-                        }
+//                        for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+//                            String cost = (String) postSnapshot.child("amazon").child(product).child("cost").getValue().toString();
+//                            System.out.println(cost);
+//                            amazonPrice.setText(postSnapshot.child("amazon").child(product).getValue().toString());
+//                            Map<String, Object> value = ((Map<String, Object>) dataSnapshot.getValue());
+//                            System.out.println(value);
+//                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        //handle databaseError
+                    }
+                });
+        DatabaseReference flipkartRref = FirebaseDatabase.getInstance().getReference().child("flipkar");
+        DatabaseReference flipkartRef1 = flipkartRref.child(product).child("cost");
+        flipkartRef1.addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        prodName.setText(product);
+                        String cost = dataSnapshot.getValue(String.class);
+                        flipkartPrice.setText(cost);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        //handle databaseError
+                    }
+                });
+
+        DatabaseReference snapdealRref = FirebaseDatabase.getInstance().getReference().child("snapdea");
+        DatabaseReference snapdealRef1 = snapdealRref.child(product).child("cost");
+        snapdealRef1.addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        prodName.setText(product);
+                        String cost = dataSnapshot.getValue(String.class);
+                        paytmPrice.setText(cost);
                     }
 
                     @Override
