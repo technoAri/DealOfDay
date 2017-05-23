@@ -181,7 +181,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="33"
-                    android:src="@drawable/paytm" />
+                    android:src="@drawable/snapdeal_logo" />
 
                 <TextView
                     android:id="@+id/tvpaytmPrice"

@@ -23,13 +23,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/Base.AlertDialog.AppCompat.Light"
+        android:padding="10dp"
+        android:gravity="center_horizontal"
         android:textColor="#FFFFFF"
-        android:text="Welcome! Find the best deals of the e-commerce giants and garb the opportunities..." />
+        android:text="Welcome! Find the best deals of the e-commerce giants and avail the opportunities..." />
     <TextView
         android:layout_below="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Happy Shopping"
+        android:text="Happy Shopping!"
         style="@style/Base.AlertDialog.AppCompat.Light"
         android:textStyle="italic"
         android:layout_centerHorizontal="true"
@@ -37,33 +39,33 @@
         android:id="@+id/textView"
         android:textColor="#FFFFFF"/>
 
-    <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout"
-        android:orientation="horizontal">
+    <!--<LinearLayout-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/linearLayout"-->
+        <!--android:orientation="horizontal">-->
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="80"
-            android:layout_height="wrap_content"
-            android:text="Feeling Interested?"
-            android:gravity="center_horizontal"
-            android:paddingLeft="30dp"
-            android:layout_marginLeft="20dp"
-            android:textColor="#FFFFFF"/>
-        <TextView
-            android:id="@+id/tvNext"
-            android:layout_width="0dp"
-            android:layout_weight="20"
-            android:layout_height="wrap_content"
-            android:text="NEXT"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:textSize="18dp"/>
-    </LinearLayout>
+        <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="80"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Feeling Interested?"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:paddingLeft="30dp"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:textColor="#FFFFFF"/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/tvNext"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="20"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="NEXT"-->
+            <!--android:gravity="center"-->
+            <!--android:textColor="#FFFFFF"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textSize="18dp"/>-->
+    <!--</LinearLayout>-->
 
 
 </RelativeLayout>

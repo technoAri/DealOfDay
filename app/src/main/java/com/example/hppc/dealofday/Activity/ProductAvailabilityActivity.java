@@ -11,9 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hppc.dealofday.R;
-import com.example.hppc.dealofday.Repository.Amazon;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,6 +29,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
     ImageView backButton;
     Bundle bundle;
     String product;
+    public static String amazonLink, flipkartLink, snapdealLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,20 +73,52 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         prodName.setText(product);
                         String cost = dataSnapshot.getValue(String.class);
                         amazonPrice.setText(cost);
-
-                        //Get map of users in datasnapshot
-//                        for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-//                            String cost = (String) postSnapshot.child("amazon").child(product).child("cost").getValue().toString();
-//                            System.out.println(cost);
-//                            amazonPrice.setText(postSnapshot.child("amazon").child(product).getValue().toString());
-//                            Map<String, Object> value = ((Map<String, Object>) dataSnapshot.getValue());
-//                            System.out.println(value);
-//                        }
                     }
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-                        //handle databaseError
+                        Toast.makeText(getApplicationContext(), "Some error occured. Check your internet connection and try again...", Toast.LENGTH_SHORT).show();
+                    }
+                });
+        if(product.contains("MacBook"))
+            prodDesc.setText("Apple OS X MacBook Laptop");
+        else if(product.contains("iPhone"))
+            prodDesc.setText("ios smartphone 5.5 inch");
+        else if(product.contains("Coolpad") || product.contains("Moto") || product.contains("OnePlus") || product.contains("Samsung") || product.contains("Micromax"))
+            prodDesc.setText("Android smart phone 5.5 inch");
+        else if(product.contains("Inspiron"))
+            prodDesc.setText("Dell Laptop");
+        else if(product.contains("Mi"))
+            prodDesc.setText("Mi high quality earphones");
+        else if(product.contains("WD") || product.contains("Seagate"))
+            prodDesc.setText("WD hard disk");
+        else if(product.contains("MSI"))
+            prodDesc.setText("MSI Laptop Core i7/ 16 GB/ 1 TB");
+        else if(product.contains("Seiko"))
+            prodDesc.setText("Seiko Men's Analog watch");
+        DatabaseReference amazonRef2 = amaziRref.child(product).child("link");
+        amazonRef2.addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        amazonLink = dataSnapshot.getValue(String.class);
+                        if(!amazonLink.equals("-")) {
+                            amazonBuy.setTextColor(Color.BLUE);
+                            amazonBuy.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent  = new Intent(ProductAvailabilityActivity.this, WebViewActivity.class);
+                                    intent.putExtra("keyName", "buyAmazon");
+                                    startActivity(intent);
+                                }
+                            });
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Toast.makeText(getApplicationContext(), "Some error occured. Check your internet connection and try again...", Toast.LENGTH_SHORT).show();
                     }
                 });
         DatabaseReference flipkartRref = FirebaseDatabase.getInstance().getReference().child("flipkar");
@@ -102,7 +135,32 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-                        //handle databaseError
+                        Toast.makeText(getApplicationContext(), "Some error occured. Check your internet connection and try again...", Toast.LENGTH_SHORT).show();
+                    }
+                });
+        DatabaseReference flipkartRef2 = flipkartRref.child(product).child("link");
+        flipkartRef2.addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        flipkartLink = dataSnapshot.getValue(String.class);
+                        if(!flipkartLink.equals("-")) {
+                            flipkartBuy.setTextColor(Color.BLUE);
+                            flipkartBuy.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent  = new Intent(ProductAvailabilityActivity.this, WebViewActivity.class);
+                                    intent.putExtra("keyName", "buyFlipkart");
+                                    startActivity(intent);
+                                }
+                            });
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Toast.makeText(getApplicationContext(), "Some error occured. Check your internet connection and try again...", Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -120,53 +178,35 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-                        //handle databaseError
+                        Toast.makeText(getApplicationContext(), "Some error occured. Check your internet connection and try again...", Toast.LENGTH_SHORT).show();
                     }
                 });
 
-//        mDatabase.child("amazon").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-//                    postSnapshot.child("amazon").getValue();
-//
-//                    Map<String, Object> value = (Map<String, Object>) dataSnapshot.getValue();
-//                    priceCoolpad = String.valueOf(value.get("Amazon"));
-//
-//                    if (product.equals("coolpad")) {
-//                        prodName.setText(product);
-//                        amazonPrice.setText(priceCoolpad);
-//                        flipkartPrice.setText(String.valueOf(value.get("Flipkart")));
-//                        paytmPrice.setText(String.valueOf(value.get("PayTm")));
-//                        prodDesc.setText("Smartphone Android 5.1 \n 5 inch display");
-//
-//                        if (!value.get("Amazon").equals("--")) {
-//                            amazonBuy.setTextColor(Color.BLUE);
-//                        }
-//                        if (!value.get("Flipkart").equals("--")) {
-//                            flipkartBuy.setTextColor(Color.BLUE);
-//                        }
-//                        if (!value.get("PayTm").equals("--")) {
-//                            paytmBuy.setTextColor(Color.BLUE);
-//                        }
-//                        amazonBuy.setOnClickListener(new View.OnClickListener() {
-//                            @Override
-//                            public void onClick(View v) {
-//                                Intent i = new Intent(ProductAvailabilityActivity.this, WebViewActivity.class);
-//                                i.putExtra("keyName", "coolpad");
-//                                startActivity(i);
-//                            }
-//                        });
-//                    }
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                System.out.println("The read failed: " + databaseError.getMessage());
-//            }
-//        });
+        DatabaseReference snapdealRef2 = snapdealRref.child(product).child("link");
+        snapdealRef2.addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        snapdealLink = dataSnapshot.getValue(String.class);
+                        if(!snapdealLink.equals("-")) {
+                            paytmBuy.setTextColor(Color.BLUE);
+                            paytmBuy.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent  = new Intent(ProductAvailabilityActivity.this, WebViewActivity.class);
+                                    intent.putExtra("keyName", "buySnapdeal");
+                                    startActivity(intent);
+                                }
+                            });
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Toast.makeText(getApplicationContext(), "Some error occured. Check your internet connection and try again...", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
     }
 
     @Override

@@ -52,7 +52,8 @@ public class HomeScreenActivity extends AppCompatActivity {
     public static DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
 
-    String[] products = {"Apple MacBook Air MMGF2HN", "Apple MacBook Pro MJLQ2HN", "Moto E3", "Coolpad Note Prime", "Moto G3", "Fastrack Analog Watch for Men", "LG Washing Machine", "Lenovo k3 Note", "Levi's Dark blue Jeans", "Nikon Coolpix S7000", "Samsung Galaxy S6", "iPhone 6S"};
+    String[] products = {"Apple MacBook Air MMGF2HN", "Apple MacBook Pro MJLQ2HN", "Apple MacBook Pro MLH32HN", "Apple iPhone 6 (Space Gre", "Apple iPhone 6s (Space Gr", "Apple iPhone 7 (Black, 32", "Coolpad Note 5 Lite", "Dell Inspiron 7559 UltraH", "Inspiron i7-15RSLV Dell 1",
+            "MSI GE62VR 7RF Apache Pro", "Mi Air Capsule Earphones", "Mi Basic In-Ear Headphone", "Micromax Canvas 6 Pro", "Moto G Play, 4th Gen", "OnePlus 3T (Gunmetal, 6GB", "Samsung Galaxy J7","Samsung Galaxy S7", "Samsung On5 Pro", "Samsung On7 Pro", "Seagate Backup Plus Slim ", " Seiko Men's SNK803 Seiko", "WD Elements 1TB Portable", "WD Elements 2TB Portable"};
 
     //@TargetApi(Build.VERSION_CODES.N)
     @Override
@@ -93,12 +94,10 @@ public class HomeScreenActivity extends AppCompatActivity {
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)){
+                if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
                     mDrawerLayout.closeDrawer(mDrawerList);
                     mDrawerLayout.closeDrawer(Gravity.RIGHT);
-                }
-
-                else
+                } else
                     mDrawerLayout.openDrawer(Gravity.LEFT);
             }
         });
@@ -129,7 +128,7 @@ public class HomeScreenActivity extends AppCompatActivity {
             }
         });
 
-    search = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView1);
+        search = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView1);
 
         ArrayAdapter adapter = new
                 ArrayAdapter(this, android.R.layout.simple_list_item_1, products);
@@ -145,26 +144,59 @@ public class HomeScreenActivity extends AppCompatActivity {
                     bundle.putString("product", "Apple MacBook Air MMGF2HN");
                 } else if (search.getText().toString().equals("Apple MacBook Pro MJLQ2HN")) {
                     bundle.putString("product", "Apple MacBook Pro MJLQ2HN");
-                } else if (search.getText().toString().equals("Lenovo k3 Note")) {
-                    bundle.putString("product", "Lenovo k3 Note");
-                } else if (search.getText().toString().equals("Fastrack Analog Watch for Men")) {
-                    bundle.putString("product", "Fastrack Analog Watch for Men");
-                } else if (search.getText().toString().equals("Coolpad Note Prime")) {
-                    bundle.putString("product", "Coolpad Note Prime");
-                } else if (search.getText().toString().equals("Levi's Dark blue Jeans")) {
-                    bundle.putString("product", "Levi's Dark blue Jeans");
-                } else if (search.getText().toString().equals("Moto G3")) {
-                    bundle.putString("product", "Moto G3");
-                } else if (search.getText().toString().equals("MotoE3")) {
-                    bundle.putString("product", "MotoE3");
-                } else if (search.getText().toString().equals("Nikon Coolpix S7000")) {
-                    bundle.putString("product", "Nikon Coolpix S7000");
-                } else if (search.getText().toString().equals("Samsung Galaxy S6")) {
-                    bundle.putString("product", "Samsung Galaxy S6");
-                } else if (search.getText().toString().equals("iPhone 6S")) {
-                    bundle.putString("product", "iPhone 6S");
-                } else if (search.getText().toString().equals("Sony Bravia KLV-32R302D 32 Inch")) {
-                    bundle.putString("product", "Sony Bravia KLV-32R302D 32 Inch");
+                } else if (search.getText().toString().equals("Apple MacBook Pro MLH32HN")) {
+                    bundle.putString("product", "Apple MacBook Pro MLH32HN");
+                } else if (search.getText().toString().equals("Apple iPhone 6 (Space Gre")) {
+                    bundle.putString("product", "Apple iPhone 6 (Space Gre");
+                } else if (search.getText().toString().equals("Apple iPhone 6s (Space Gr")) {
+                    bundle.putString("product", "Apple iPhone 6s (Space Gr");
+                } else if (search.getText().toString().equals("Apple iPhone 7 (Black, 32")) {
+                    bundle.putString("product", "Apple iPhone 7 (Black, 32");
+                } else if (search.getText().toString().equals("Coolpad Note 5 Lite")) {
+                    bundle.putString("product", "Coolpad Note 5 Lite");
+                } else if (search.getText().toString().equals("Dell Inspiron 7559 UltraH")) {
+                    bundle.putString("product", "Dell Inspiron 7559 UltraH");
+                } else if (search.getText().toString().equals("Inspiron i7-15RSLV Dell 1")) {
+                    bundle.putString("product", "Inspiron i7-15RSLV Dell 1");
+                } else if (search.getText().toString().equals("MSI GE62VR 7RF Apache Pro")) {
+                    bundle.putString("product", "MSI GE62VR 7RF Apache Pro");
+                } else if (search.getText().toString().equals("Mi Air Capsule Earphones")) {
+                    bundle.putString("product", "Mi Air Capsule Earphones");
+                } else if (search.getText().toString().equals("Mi Basic In-Ear Headphone")) {
+                    bundle.putString("product", "Mi Basic In-Ear Headphone");
+                } else if (search.getText().toString().equals("Micromax Canvas 6 Pro")) {
+                    bundle.putString("product", "Micromax Canvas 6 Pro");
+
+                } else if (search.getText().toString().equals("Moto G Play, 4th Gen")) {
+                    bundle.putString("product", "Moto G Play, 4th Gen");
+
+                } else if (search.getText().toString().equals("OnePlus 3T (Gunmetal, 6GB")) {
+                    bundle.putString("product", "OnePlus 3T (Gunmetal, 6GB");
+
+                } else if (search.getText().toString().equals("Samsung Galaxy J7")) {
+                    bundle.putString("product", "Samsung Galaxy J7");
+
+                } else if (search.getText().toString().equals("Samsung Galaxy S7")) {
+                    bundle.putString("product", "Samsung Galaxy S7");
+
+                } else if (search.getText().toString().equals("Samsung On5 Pro")) {
+                    bundle.putString("product", "Samsung On5 Pro");
+
+                } else if (search.getText().toString().equals("Samsung On7 Pro")) {
+                    bundle.putString("product", "Samsung On7 Pro");
+
+                } else if (search.getText().toString().equals("Seagate Backup Plus Slim")) {
+                    bundle.putString("product", "Seagate Backup Plus Slim");
+
+                } else if (search.getText().toString().equals("Seiko Men's SNK803 Seiko")) {
+                    bundle.putString("product", "Seiko Men's SNK803 Seiko");
+
+                } else if (search.getText().toString().equals("WD Elements 1TB Portable")) {
+                    bundle.putString("product", "WD Elements 1TB Portable");
+
+                } else if (search.getText().toString().equals("WD Elements 2TB Portable")) {
+                    bundle.putString("product", "WD Elements 2TB Portable");
+
                 } else {
                     Toast.makeText(getApplicationContext(), "Sorry! this product is not in our Database...", Toast.LENGTH_SHORT).show();
                 }
