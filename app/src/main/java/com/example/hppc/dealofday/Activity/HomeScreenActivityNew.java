@@ -35,8 +35,7 @@ import java.util.Date;
 public class HomeScreenActivityNew extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    TextView textViewDateTime, amazonProdName, flipkartProdNeme, amazonPrice, flipkartPrice;
-    ImageView menuButton;
+    TextView textViewDateTime;
     Button categoryButton;
     AutoCompleteTextView search;
     ImageButton amazon, flipkart, ebay, paytm, snapdeal;
@@ -45,15 +44,11 @@ public class HomeScreenActivityNew extends AppCompatActivity
     public static final String FIREBASE_URL = "https://dealofday-26c4f.firebaseio.com/";
     Bundle bundle;
 
-    private String[] mNavigationDrawerItemTitles;
-    public static DrawerLayout mDrawerLayout;
-    private ListView mDrawerList;
-
     String[] products = {"Apple MacBook Air MMGF2HN", "Apple MacBook Pro MJLQ2HN", "Apple MacBook Pro MLH32HN",
             "Apple iPhone 6 (Space Gre", "Apple iPhone 6s (Space Gr", "Apple iPhone 7 (Black, 32", "Coolpad Note 5 Lite",
             "Dell Inspiron 7559 UltraH", "Inspiron i7-15RSLV Dell 1", "MSI GE62VR 7RF Apache Pro", "Mi Air Capsule Earphones",
             "Mi Basic In-Ear Headphone", "Micromax Canvas 6 Pro", "Moto G Play, 4th Gen", "OnePlus 3T (Gunmetal, 6GB",
-            "Samsung Galaxy J7","Samsung Galaxy S7", "Samsung On5 Pro", "Samsung On7 Pro", "Seagate Backup Plus Slim",
+            "Samsung Galaxy J7", "Samsung Galaxy S7", "Samsung On5 Pro", "Samsung On7 Pro", "Seagate Backup Plus Slim",
             "Seiko Men's SNK803 Seiko", "WD Elements 1TB Portable", "WD Elements 2TB Portable"};
 
     @Override
@@ -87,6 +82,63 @@ public class HomeScreenActivityNew extends AppCompatActivity
         imageViewProd2 = (ImageView) findViewById(R.id.watchImageTrend);
         imageViewProd3 = (ImageView) findViewById(R.id.miImageTrend);
         imageViewProd4 = (ImageView) findViewById(R.id.wmImageTrend);
+
+        final String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+        CountDownTimer newtimer = new CountDownTimer(1000000000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                Calendar c = Calendar.getInstance();
+                String dateTime = ((DateFormat.getDateInstance().format(new Date()) + " " + c.get(Calendar.HOUR) + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND)));
+                textViewDateTime.setText(dateTime);
+            }
+
+            public void onFinish() {
+
+            }
+        };
+        newtimer.start();
+
+        //deal of day buttons
+        amazon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent activityIntent = new Intent(HomeScreenActivityNew.this, WebViewActivity.class);
+                activityIntent.putExtra("keyName", "amazon");
+                startActivity(activityIntent);
+            }
+        });
+        flipkart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent activityIntent = new Intent(HomeScreenActivityNew.this, WebViewActivity.class);
+                activityIntent.putExtra("keyName", "flipkart");
+                startActivity(activityIntent);
+            }
+        });
+        snapdeal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent activityIntent = new Intent(HomeScreenActivityNew.this, WebViewActivity.class);
+                activityIntent.putExtra("keyName", "snapdeal");
+                startActivity(activityIntent);
+            }
+        });
+        paytm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent activityIntent = new Intent(HomeScreenActivityNew.this, WebViewActivity.class);
+                activityIntent.putExtra("keyName", "payTm");
+                startActivity(activityIntent);
+            }
+        });
+        ebay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent activityIntent = new Intent(HomeScreenActivityNew.this, WebViewActivity.class);
+                activityIntent.putExtra("keyName", "ebay");
+                startActivity(activityIntent);
+            }
+        });
 
         imageViewProd1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -207,62 +259,7 @@ public class HomeScreenActivityNew extends AppCompatActivity
                 i.putExtras(bundle);
                 startActivity(i);
 
-                final String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-                CountDownTimer newtimer = new CountDownTimer(1000000000, 1000) {
 
-                    public void onTick(long millisUntilFinished) {
-                        Calendar c = Calendar.getInstance();
-                        String dateTime = ((DateFormat.getDateInstance().format(new Date()) + " " + c.get(Calendar.HOUR) + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND)));
-                        textViewDateTime.setText(dateTime);
-                    }
-
-                    public void onFinish() {
-
-                    }
-                };
-                newtimer.start();
-                //insertSampleData();
-
-                amazon.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent activityIntent = new Intent(HomeScreenActivityNew.this, WebViewActivity.class);
-                        activityIntent.putExtra("keyName", "amazon");
-                        startActivity(activityIntent);
-                    }
-                });
-                flipkart.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent activityIntent = new Intent(HomeScreenActivityNew.this, WebViewActivity.class);
-                        activityIntent.putExtra("keyName", "flipkart");
-                        startActivity(activityIntent);
-                    }
-                });
-                snapdeal.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent activityIntent = new Intent(HomeScreenActivityNew.this, WebViewActivity.class);
-                        activityIntent.putExtra("keyName", "snapdeal");
-                        startActivity(activityIntent);
-                    }
-                });
-                paytm.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent activityIntent = new Intent(HomeScreenActivityNew.this, WebViewActivity.class);
-                        activityIntent.putExtra("keyName", "payTm");
-                        startActivity(activityIntent);
-                    }
-                });
-                ebay.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent activityIntent = new Intent(HomeScreenActivityNew.this, WebViewActivity.class);
-                        activityIntent.putExtra("keyName", "ebay");
-                        startActivity(activityIntent);
-                    }
-                });
             }
         });
     }
