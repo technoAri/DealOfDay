@@ -23,20 +23,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //tvNext = (TextView) findViewById(R.id.tvNext);
-//        tvNext.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent activityIntent = new Intent(MainActivity.this, HomeScreenActivity.class);
-//                startActivity(activityIntent);
-//            }
-//        });
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 if (InternetConnection.checkConnection(getApplicationContext())) {
-                    Intent i = new Intent(MainActivity.this, HomeScreenActivity.class);
+                    Intent i = new Intent(MainActivity.this, HomeScreenActivityNew.class);
                     startActivity(i);
                     finish();
                 } else {

@@ -11,11 +11,11 @@
         android:layout_height="50dp"
         android:background="#FE512C">
 
-        <ImageView
-            android:id="@+id/menu_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_list_white" />
+        <!--<ImageView-->
+            <!--android:id="@+id/menu_button"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/ic_list_white" />-->
 
         <TextView
             android:id="@+id/tvNametoolbar1"
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:text="Deal Of Day"
             android:gravity="center"
-            android:paddingLeft="40dp"
+            android:paddingLeft="20dp"
             android:paddingRight="40dp"
             android:textSize="20dp"
             android:textColor="#FCFAFA"

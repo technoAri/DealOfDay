@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_amazon"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Today's deal of Amazon" />
+        <item
+            android:id="@+id/nav_flipkart"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Today's deal of Flipkart" />
+        <item
+            android:id="@+id/nav_snapdeal"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Today's deal of Snapdeal" />
+        <item
+            android:id="@+id/nav_paytm"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Today's deal of PayTm" />
+        <item
+            android:id="@+id/nav_ebay"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Today's deal of ebay" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <!--<item-->
+                <!--android:id="@+id/nav_share"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Share" />-->
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_phone_black_24dp"
+                android:title="Contact Developers" />
+        </menu>
+    </item>
+
+</menu>

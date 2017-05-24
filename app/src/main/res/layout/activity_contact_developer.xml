@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hppc.dealofday.Activity.ContactDeveloperActivity">
+
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Arindam Ganguly"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="iamari.cse@gmail.com"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7699149899"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GitHub: https://github.com/technoAri"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:paddingTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Niladri Sekhar Basu"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mw.basu@gmail.com"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GitHub: https://github.com/mwbasu"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:gravity="center_horizontal"/>
+
+
+    </LinearLayout>
+</RelativeLayout>

@@ -39,4 +39,10 @@ dependencies {
     compile 'com.google.firebase:firebase-database:9.6.0'
 }
 
+dependencies {
+    compile 'com.android.support.constraint:constraint-layout:+'
+}
+dependencies {
+    compile 'com.android.support.constraint:constraint-layout:+'
+}
 apply plugin: 'com.google.gms.google-services'

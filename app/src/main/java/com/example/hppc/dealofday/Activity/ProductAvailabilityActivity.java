@@ -72,7 +72,8 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
 
                         prodName.setText(product);
                         String cost = dataSnapshot.getValue(String.class);
-                        amazonPrice.setText(cost);
+                        if (cost != null)
+                            amazonPrice.setText(cost);
                     }
 
                     @Override
@@ -80,21 +81,21 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Some error occured. Check your internet connection and try again...", Toast.LENGTH_SHORT).show();
                     }
                 });
-        if(product.contains("MacBook"))
+        if (product.contains("MacBook"))
             prodDesc.setText("Apple OS X MacBook Laptop");
-        else if(product.contains("iPhone"))
+        else if (product.contains("iPhone"))
             prodDesc.setText("ios smartphone 5.5 inch");
-        else if(product.contains("Coolpad") || product.contains("Moto") || product.contains("OnePlus") || product.contains("Samsung") || product.contains("Micromax"))
+        else if (product.contains("Coolpad") || product.contains("Moto") || product.contains("OnePlus") || product.contains("Samsung") || product.contains("Micromax"))
             prodDesc.setText("Android smart phone 5.5 inch");
-        else if(product.contains("Inspiron"))
+        else if (product.contains("Inspiron"))
             prodDesc.setText("Dell Laptop");
-        else if(product.contains("Mi"))
+        else if (product.contains("Mi"))
             prodDesc.setText("Mi high quality earphones");
-        else if(product.contains("WD") || product.contains("Seagate"))
+        else if (product.contains("WD") || product.contains("Seagate"))
             prodDesc.setText("WD hard disk");
-        else if(product.contains("MSI"))
+        else if (product.contains("MSI"))
             prodDesc.setText("MSI Laptop Core i7/ 16 GB/ 1 TB");
-        else if(product.contains("Seiko"))
+        else if (product.contains("Seiko"))
             prodDesc.setText("Seiko Men's Analog watch");
         DatabaseReference amazonRef2 = amaziRref.child(product).child("link");
         amazonRef2.addListenerForSingleValueEvent(
@@ -103,16 +104,18 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
                         amazonLink = dataSnapshot.getValue(String.class);
-                        if(!amazonLink.equals("-")) {
-                            amazonBuy.setTextColor(Color.BLUE);
-                            amazonBuy.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    Intent intent  = new Intent(ProductAvailabilityActivity.this, WebViewActivity.class);
-                                    intent.putExtra("keyName", "buyAmazon");
-                                    startActivity(intent);
-                                }
-                            });
+                        if (amazonLink != null) {
+                            if (!amazonLink.equals("-")) {
+                                amazonBuy.setTextColor(Color.BLUE);
+                                amazonBuy.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent = new Intent(ProductAvailabilityActivity.this, WebViewActivity.class);
+                                        intent.putExtra("keyName", "buyAmazon");
+                                        startActivity(intent);
+                                    }
+                                });
+                            }
                         }
                     }
 
@@ -130,7 +133,8 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
 
                         prodName.setText(product);
                         String cost = dataSnapshot.getValue(String.class);
-                        flipkartPrice.setText(cost);
+                        if (cost != null)
+                            flipkartPrice.setText(cost);
                     }
 
                     @Override
@@ -145,16 +149,18 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
                         flipkartLink = dataSnapshot.getValue(String.class);
-                        if(!flipkartLink.equals("-")) {
-                            flipkartBuy.setTextColor(Color.BLUE);
-                            flipkartBuy.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    Intent intent  = new Intent(ProductAvailabilityActivity.this, WebViewActivity.class);
-                                    intent.putExtra("keyName", "buyFlipkart");
-                                    startActivity(intent);
-                                }
-                            });
+                        if (flipkartLink != null) {
+                            if (!flipkartLink.equals("-")) {
+                                flipkartBuy.setTextColor(Color.BLUE);
+                                flipkartBuy.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent = new Intent(ProductAvailabilityActivity.this, WebViewActivity.class);
+                                        intent.putExtra("keyName", "buyFlipkart");
+                                        startActivity(intent);
+                                    }
+                                });
+                            }
                         }
                     }
 
@@ -173,6 +179,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
 
                         prodName.setText(product);
                         String cost = dataSnapshot.getValue(String.class);
+                        if (cost != null)
                         paytmPrice.setText(cost);
                     }
 
@@ -188,16 +195,18 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         snapdealLink = dataSnapshot.getValue(String.class);
-                        if(!snapdealLink.equals("-")) {
-                            paytmBuy.setTextColor(Color.BLUE);
-                            paytmBuy.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    Intent intent  = new Intent(ProductAvailabilityActivity.this, WebViewActivity.class);
-                                    intent.putExtra("keyName", "buySnapdeal");
-                                    startActivity(intent);
-                                }
-                            });
+                        if (snapdealLink != null) {
+                            if (!snapdealLink.equals("-")) {
+                                paytmBuy.setTextColor(Color.BLUE);
+                                paytmBuy.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent = new Intent(ProductAvailabilityActivity.this, WebViewActivity.class);
+                                        intent.putExtra("keyName", "buySnapdeal");
+                                        startActivity(intent);
+                                    }
+                                });
+                            }
                         }
                     }
 
@@ -211,7 +220,7 @@ public class ProductAvailabilityActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()){
+        switch (item.getItemId()) {
 
         }
         return super.onOptionsItemSelected(item);
