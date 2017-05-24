@@ -93,11 +93,6 @@
             android:orientation="horizontal"
             android:weightSum="1">
 
-            <!--<TextView-->
-            <!--android:layout_width="1dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:background="#00FFF0"/>-->
-
             <ImageButton
                 android:id="@+id/amazonLogo"
                 android:layout_width="wrap_content"
@@ -133,11 +128,6 @@
                 android:layout_margin="2dp"
                 android:src="@drawable/snapdeal_logo" />
 
-            <!--<TextView-->
-            <!--android:layout_width="1dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:background="#00FFF0"/>-->
-
         </LinearLayout>
 
     </HorizontalScrollView>
@@ -158,19 +148,6 @@
         android:background="#00FFF0"
         android:text="" />
 
-    <!--<TextView-->
-    <!--android:id="@+id/tvTrending"-->
-    <!--android:layout_below="@id/tvfixedLine"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="Top sell Products"-->
-    <!--android:textColor="#f95850"-->
-    <!--android:textStyle="italic"/>-->
-
-    <!--<LinearLayout-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content">-->
-    <!--</LinearLayout>-->
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -203,6 +180,7 @@
                 android:layout_margin="2dp">
 
                 <ImageView
+                    android:id="@+id/watchImageTrend"
                     android:layout_width="200dp"
                     android:layout_height="280dp"
                     android:src="@drawable/frastrackwatch" />
@@ -215,6 +193,7 @@
                 android:layout_margin="2dp">
 
                 <ImageView
+                    android:id="@+id/miImageTrend"
                     android:layout_width="200dp"
                     android:layout_height="280dp"
                     android:src="@drawable/redmi" />
@@ -227,6 +206,7 @@
                 android:layout_margin="2dp">
 
                 <ImageView
+                    android:id="@+id/wmImageTrend"
                     android:layout_width="200dp"
                     android:layout_height="280dp"
                     android:src="@drawable/lgwashingmachine" />
@@ -275,6 +255,5 @@
             android:textStyle="italic" />
 
     </LinearLayout>
-
 
 </RelativeLayout>

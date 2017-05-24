@@ -84,5 +84,15 @@ public class WebViewActivity extends AppCompatActivity {
             webView.loadUrl(ProductAvailabilityActivity.flipkartLink);
         else if (data.equals("buySnapdeal"))
             webView.loadUrl(ProductAvailabilityActivity.snapdealLink);
+
+        //for trendings
+        else if(data.equals("coolpad"))
+            webView.loadUrl("http://www.amazon.in/Coolpad-Note-Royal-Gold-32/dp/B01FM7H0K8/ref=sr_1_4?s=electronics&ie=UTF8&qid=1495657294&sr=1-4&keywords=coolpad+note+5+lite");
+        else if (data.equals("watch"))
+            webView.loadUrl("https://www.flipkart.com/fastrack-nd3072sl02-big-time-analog-watch-men/p/itmdvauxsfhgqhye?pid=WATDAZHBSBYQBUUT&srno=s_1_30&otracker=search&lid=LSTWATDAZHBSBYQBUUTOJEOUN&qH=22d9212fef0c1760");
+        else if(data.equals("mi"))
+            webView.loadUrl("https://www.flipkart.com/redmi-note-4-gold-32-gb/p/itmer37fmekafqct?pid=MOBEQ98TESD8MYUA&srno=s_1_6&otracker=search&lid=LSTMOBEQ98TESD8MYUASHFXKS&qH=26fa811853282c74");
+        else if(data.equals("wm"))
+            webView.loadUrl("https://www.snapdeal.com/product/lg-p9032r3s-8-kg-semi/1340804770#bcrumbSearch:LG%208kg%20Semi%20Automatic%20Top%20Loading%20Washing%20Machine%20%28P9032R3SM%29%20Price");
     }
 }

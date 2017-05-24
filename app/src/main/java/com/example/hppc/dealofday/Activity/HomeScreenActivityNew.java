@@ -40,7 +40,7 @@ public class HomeScreenActivityNew extends AppCompatActivity
     Button categoryButton;
     AutoCompleteTextView search;
     ImageButton amazon, flipkart, ebay, paytm, snapdeal;
-    ImageView imageViewProd1;
+    ImageView imageViewProd1, imageViewProd2, imageViewProd3, imageViewProd4;
     private DatabaseReference mDatabase;
     public static final String FIREBASE_URL = "https://dealofday-26c4f.firebaseio.com/";
     Bundle bundle;
@@ -84,12 +84,39 @@ public class HomeScreenActivityNew extends AppCompatActivity
         paytm = (ImageButton) findViewById(R.id.paytmLogo);
         snapdeal = (ImageButton) findViewById(R.id.snapdealLogo);
         imageViewProd1 = (ImageView) findViewById(R.id.coolpadImageTrend);
+        imageViewProd2 = (ImageView) findViewById(R.id.watchImageTrend);
+        imageViewProd3 = (ImageView) findViewById(R.id.miImageTrend);
+        imageViewProd4 = (ImageView) findViewById(R.id.wmImageTrend);
 
         imageViewProd1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentTrnd = new Intent(HomeScreenActivityNew.this, WebViewActivity.class);
                 intentTrnd.putExtra("keyName", "coolpad");
+                startActivity(intentTrnd);
+            }
+        });
+        imageViewProd2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentTrnd = new Intent(HomeScreenActivityNew.this, WebViewActivity.class);
+                intentTrnd.putExtra("keyName", "watch");
+                startActivity(intentTrnd);
+            }
+        });
+        imageViewProd3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentTrnd = new Intent(HomeScreenActivityNew.this, WebViewActivity.class);
+                intentTrnd.putExtra("keyName", "mi");
+                startActivity(intentTrnd);
+            }
+        });
+        imageViewProd4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentTrnd = new Intent(HomeScreenActivityNew.this, WebViewActivity.class);
+                intentTrnd.putExtra("keyName", "wm");
                 startActivity(intentTrnd);
             }
         });
